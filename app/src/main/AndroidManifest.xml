@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.lieyanqzu.app.coolweather.activity.WeatherActivity">
-        </activity>
+        <activity android:name="com.lieyanqzu.app.coolweather.activity.WeatherActivity"></activity>
+        <service android:name="com.lieyanqzu.app.coolweather.service.AutoUpdateService"></service>
+        <receiver android:name="com.lieyanqzu.app.coolweather.receiver.AutoUpdateReceiver"></receiver>
     </application>
 </manifest>
