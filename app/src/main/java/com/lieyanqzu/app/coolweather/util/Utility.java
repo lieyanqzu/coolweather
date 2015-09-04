@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.lieyanqzu.app.coolweather.db.CoolWeatherDB;
 import com.lieyanqzu.app.coolweather.model.City;

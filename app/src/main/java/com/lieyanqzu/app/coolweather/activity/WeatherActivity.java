@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
@@ -51,7 +52,7 @@ public class WeatherActivity extends Activity {
     }
 
     private void queryWeatherCode(String countyCode) {
-        String address = "http://www.weather.com.cn/data/list3/city" + countyCode + ".html";
+        String address = "http://www.weather.com.cn/data/list3/city" + countyCode + ".xml";
         queryFromServer(address, "countyCode");
     }
 
@@ -65,7 +66,7 @@ public class WeatherActivity extends Activity {
             @Override
             public void onFinish(String response) {
                 if ("countyCode".equals(type)) {
-                    if (TextUtils.isEmpty(response)) {
+                    if (!TextUtils.isEmpty(response)) {
                         String[] array = response.split("\\|");
                         if (array != null && array.length == 2) {
                             String weatherCode = array[1];
@@ -103,7 +104,7 @@ public class WeatherActivity extends Activity {
         temp2Text.setText(prefs.getString("temp2", ""));
         weatherDespText.setText(prefs.getString("weather_desp", ""));
         publishText.setText("今天" + prefs.getString("publish_time", "") + "发布");
-        currentDateText.setText(prefs.getString("current_data", ""));
+        currentDateText.setText(prefs.getString("current_date", ""));
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
     }
