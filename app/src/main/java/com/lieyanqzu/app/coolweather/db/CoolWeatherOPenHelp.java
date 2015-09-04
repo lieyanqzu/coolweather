@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class CoolWeatherOPenHelp extends SQLiteOpenHelper {
+public class CoolWeatherOpenHelp extends SQLiteOpenHelper {
 
     public static final String CREATE_PROVINCE = "create table Province (" +
             "id integer primary key autoincrement, " +
@@ -23,7 +23,7 @@ public class CoolWeatherOPenHelp extends SQLiteOpenHelper {
             "county_code text, " +
             "city_id integer)";
 
-    public CoolWeatherOPenHelp(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public CoolWeatherOpenHelp(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 

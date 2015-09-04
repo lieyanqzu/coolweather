@@ -1,6 +1,5 @@
 package com.lieyanqzu.app.coolweather.db;
 
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -24,7 +23,7 @@ public class CoolWeatherDB {
     private SQLiteDatabase db;
 
     private CoolWeatherDB(Context context) {
-        CoolWeatherOPenHelp dbHelper = new CoolWeatherOPenHelp(context, DB_NAME, null, VERSION);
+        CoolWeatherOpenHelp dbHelper = new CoolWeatherOpenHelp(context, DB_NAME, null, VERSION);
         db = dbHelper.getWritableDatabase();
     }
 
